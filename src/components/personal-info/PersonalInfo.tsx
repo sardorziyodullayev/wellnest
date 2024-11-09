@@ -1,42 +1,48 @@
 // src/components/personal-info/PersonalInfo.tsx
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // For navigation
+import { useNavigate } from "react-router-dom"; 
+import "./PersonalInfo.css"
 
-const PersonalInfo: React.FC = () => {
+interface PersonalInfoProps {
+	nextStep: () => void; 
+}
+
+const PersonalInfo: React.FC<PersonalInfoProps> = ({ nextStep }) => {
 	const [surname, setSurname] = useState("");
 	const [name, setName] = useState("");
-	const navigate = useNavigate(); // Hook to navigate
-
-	const handleBack = () => {
-		navigate("/sign-up"); // Navigate back to the signup page
+	const navigate = useNavigate(); 
+	const handleContinue = () => {
+		if (name && surname) {
+			nextStep(); 
+		}
 	};
 
-	const handleContinue = () => {
-		// Handle submission of personal info (e.g., save to backend)
-		console.log("Personal info submitted:", { surname, name });
-		// Navigate to next step or dashboard
-		navigate("/dashboard"); // Example: navigate to dashboard
+	const handleBack = () => {
+		navigate("/sign-up"); 
 	};
 
 	return (
-		<div className="personal-info-container">
-			<h2>Personal Information</h2>
-			<form>
-				<div>
+		<div className="personal-info-container" style={{background: "#fff"}}>
+			<h2 className="personal-info-title">Personal informations</h2>
+         <p className="personal-info-text">Enter your surname and name</p>
+			<form className="personal-info-form">
+				<div className="personal-info-input">
 					<label>Surname</label>
 					<input
 						type="text"
 						value={surname}
 						onChange={e => setSurname(e.target.value)}
+                  placeholder="Enter surname"
 						required
 					/>
 				</div>
-				<div>
+				<div className="personal-info-input">
 					<label>Name</label>
 					<input
 						type="text"
 						value={name}
 						onChange={e => setName(e.target.value)}
+                  placeholder="Enter your name"
 						required
 					/>
 				</div>

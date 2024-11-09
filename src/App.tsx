@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Use Routes instead of Switch
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; 
 import Loader from "./components/loader/Loader";
 import SignIn from "./components/sign-in/SignIn";
-import SignUp from "./components/sign-up/SignUp"; // Import the SignUp component
+import SignUp from "./components/sign-up/SignUp"; 
 import PersonalInfo from "./components/personal-info/PersonalInfo";
 import "./App.css";
 
@@ -27,7 +27,7 @@ const App: React.FC = () => {
 					<Routes>
 						<Route path="/" element={<SignIn />} />
 						<Route path="/sign-up" element={<SignUp />} />
-						<Route path="/personal-info" element={<PersonalInfo />} />
+            <Route path="/personal-info" element={<PersonalInfo />} />
 					</Routes>
 				)}
 			</div>
