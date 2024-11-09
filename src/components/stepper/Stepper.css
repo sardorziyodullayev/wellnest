@@ -1,0 +1,23 @@
+/* src/components/stepper/Stepper.css */
+.stepper-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.step {
+	flex-grow: 1;
+	height: 4px;
+	background-color: #ddd;
+	margin-right: 4px;
+	transition: background-color 0.3s;
+}
+
+.step:last-child {
+	margin-right: 0;
+}
+
+.step.active {
+	background-color: #338bc2;
+}
