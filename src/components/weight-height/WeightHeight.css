@@ -1,11 +1,11 @@
-.personal-info-container {
-	padding: 25px;
+.weight-height-container {
+	padding: 20px;
 	width: 100%;
 	height: 100%;
 	background-color: #fff;
 }
 
-.personal-info-title {
+.weight-height-title {
 	margin-top: 40px;
 	color: var(--gray-800, #1e293b);
 	font-size: 30px;
@@ -14,7 +14,8 @@
 	line-height: 40px;
 }
 
-.personal-info-text {
+.weight-height-text {
+	margin-bottom: 120px;
 	color: var(--gray-500, #64748b);
 	font-size: 16px;
 	font-style: normal;
@@ -22,51 +23,70 @@
 	line-height: 24px;
 }
 
-.personal-info-form {
-	margin-top: 24px;
-	width: 100%;
-	gap: 40px;
+.weight-height-options {
+	margin-top: 25px;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+	gap: 20px;
 }
 
-.personal-info-input label {
-	color: var(--gray-600, #475569);
-	font-family: "Onest" sans-serif;
-	font-size: 17px;
+.weight-input-group {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.weight-input-group label {
+	margin-bottom: 10px;
+	color: var(--gray-500, #64748b);
+	font-size: 20px;
 	font-style: normal;
 	font-weight: 500;
-	line-height: 24px; /* 141.176% */
-}
-
-.personal-info-input input {
-	padding: 16px 12px;
-	margin-top: 6px;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 12px;
-	font-size: 18px;
-	flex: 1 0 0;
-	align-self: stretch;
-	border-radius: 10px;
-	border: 1px solid var(--gray-200, #e2e8f0);
-	background: var(--white-white, #fff);
-	color: var(--gray-400, #94a3b8);
-	font-weight: 400;
 	line-height: 24px;
-	font-family: "Onest", sans-serif;
 }
 
-.buttons {
-	margin-top: 170px;
+.weight-input-group input {
+	width: 100%;
+	height: 10px;
+	background: #ddd;
+	border-radius: 5px;
+	outline: none;
+	transition: background 0.3s ease;
+}
+
+.weight-input-group input:hover {
+	background: #bbb;
+}
+
+.weight-input-group input:focus {
+	background: #007bff;
+}
+
+.slider-value {
+	text-align: center;
+	font-size: 18px;
+	font-weight: 500;
+	color: #333;
+	margin-top: 8px;
+}
+
+.weight-height-buttons {
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+.weight-height-buttons {
+	margin-top: 150px;
 	display: flex;
 	justify-content: space-between;
 	gap: 10px;
 }
 
-.buttons button {
+.weight-height-buttons button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -76,7 +96,7 @@
 	border-radius: 10px;
 }
 
-.buttons button:nth-child(1) {
+.weight-height-buttons button:nth-child(1) {
 	background-color: transparent;
 	font-size: 18px;
 	color: #3b82f6;
@@ -86,7 +106,7 @@
 	border: 2px solid #60a5fa;
 }
 
-.buttons button:nth-child(2) {
+.weight-height-buttons button:nth-child(2) {
 	background-color: transparent;
 	font-size: 18px;
 	color: #fff;
@@ -96,13 +116,7 @@
 	background: linear-gradient(90deg, #60a5fa -1.4%, #3b82f6 48.72%);
 }
 
-.buttons button:hover {
+.weight-height-buttons button:hover {
 	border-radius: 10px;
 	background: var(--gray-300, #cbd5e1);
-}
-
-.error-message {
-	color: red;
-	font-size: 14px;
-	margin-top: 10px;
 }

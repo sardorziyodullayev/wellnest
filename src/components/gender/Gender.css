@@ -1,0 +1,121 @@
+.gender-container {
+	padding: 20px;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+}
+
+.gender-title {
+	margin-top: 40px;
+	color: var(--gray-800, #1e293b);
+	font-size: 30px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 40px;
+}
+
+.gender-text {
+	color: var(--gray-500, #64748b);
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+}
+
+.gender-options {
+	margin-top: 25px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+}
+
+.gender-content {
+	padding: 16px 0 16px 16px;
+	display: flex;
+	flex-direction: column;
+	width: 156px;
+	height: 124px;
+	flex-shrink: 0;
+	border-radius: 16px;
+	border: 1px solid var(--gray-200, #e2e8f0);
+	background: var(--white-white, #fff);
+	cursor: pointer;
+}
+
+.gender-content img {
+	width: 40px;
+	height: 40px;
+}
+
+.gender-options label {
+	margin-top: 20px;
+	color: var(--gray-500, #64748b);
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 32px;
+}
+
+.gender-content input[type="radio"]:checked {
+	visibility: hidden;
+}
+
+.gender-content input[type="radio"]:checked + .gender-span {
+	color: #007bff;
+}
+
+.gender-content input[type="radio"]:checked + .gender-options {
+	border: 2px solid #007bff;
+}
+
+/* Style for the radio input */
+.gender-options input[type="radio"] {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	position: absolute;
+	opacity: 0;
+}
+
+.gender-buttons {
+	margin-top: 300px;
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.gender-buttons button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 191px;
+	height: 56px;
+	padding: 16px 24px;
+	border-radius: 10px;
+}
+
+.gender-buttons button:nth-child(1) {
+	background-color: transparent;
+	font-size: 18px;
+	color: #3b82f6;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 28px; /* 155.556% */
+	border: 2px solid #60a5fa;
+}
+
+.gender-buttons button:nth-child(2) {
+	background-color: transparent;
+	font-size: 18px;
+	color: #fff;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 28px; /* 155.556% */
+	background: linear-gradient(90deg, #60a5fa -1.4%, #3b82f6 48.72%);
+}
+
+.gender-buttons button:hover {
+	border-radius: 10px;
+	background: var(--gray-300, #cbd5e1);
+}
