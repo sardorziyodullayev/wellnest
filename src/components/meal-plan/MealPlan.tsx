@@ -10,6 +10,10 @@ const MealPlan: React.FC = () => {
 		navigate("/next-section"); // Navigate to the next section
 	};
 
+	const handleMoreInfo = (mealId: number) => {
+		navigate(`/meal-detail/${mealId}`);
+	};
+
 	return (
 		<div className="meal-plan-container">
 			<h2 className="meal-plan-title">Your Meal Plan</h2>
@@ -46,7 +50,15 @@ const MealPlan: React.FC = () => {
 					<li>
 						<h3 className="meal-title">Breakfast</h3>
 						<div className="meal-items">
-							{mealPlans[activeDay].breakfast.name}
+							<div className="meal-content">
+								{mealPlans[activeDay].breakfast.name}
+								<button
+									className="meal-detail-button"
+									onClick={() => handleMoreInfo(mealPlans[activeDay].breakfast.id)}
+								>
+									More Info
+								</button>
+							</div>
 							<p className="meal-item-title">
 								{mealPlans[activeDay].breakfast.description}
 							</p>
@@ -60,7 +72,15 @@ const MealPlan: React.FC = () => {
 					<li>
 						<h3 className="meal-title">Lunch</h3>
 						<div className="meal-items">
-							{mealPlans[activeDay].lunch.name}
+							<div className="meal-content">
+								{mealPlans[activeDay].lunch.name}
+								<button
+									className="meal-detail-button"
+									onClick={() => handleMoreInfo(mealPlans[activeDay].breakfast.id)}
+								>
+									More Info
+								</button>
+							</div>
 							<p className="meal-item-title">
 								{mealPlans[activeDay].lunch.description}
 							</p>
@@ -74,7 +94,15 @@ const MealPlan: React.FC = () => {
 					<li>
 						<h3 className="meal-title">Dinner</h3>
 						<div className="meal-items">
-							{mealPlans[activeDay].dinner.name}
+							<div className="meal-content">
+								{mealPlans[activeDay].dinner.name}
+								<button
+									className="meal-detail-button"
+									onClick={() => handleMoreInfo(mealPlans[activeDay].breakfast.id)}
+								>
+									More Info
+								</button>
+							</div>
 							<p className="meal-item-title">
 								{mealPlans[activeDay].dinner.description}
 							</p>
@@ -99,114 +127,148 @@ const MealPlan: React.FC = () => {
 
 export default MealPlan;
 
-
-
 // Define the meal plan details for each day with detailed info
 const mealPlans: Record<
-number,
-{
-   breakfast: {
-      id: number;
-      name: string;
-      description: string;
-      protein: string;
-      carbs: string;
-      fats: string;
-   };
-   lunch: {
-      id: number;
-      name: string;
-      description: string;
-      protein: string;
-      carbs: string;
-      fats: string;
-   };
-   dinner: {
-      id: number;
-      name: string;
-      description: string;
-      protein: string;
-      carbs: string;
-      fats: string;
-   };
-}
+	number,
+	{
+		breakfast: {
+			id: number;
+			name: string;
+			description: string;
+			protein: string;
+			carbs: string;
+			fats: string;
+			benefits: string;
+			ingredients: string;
+			image: string;
+		};
+		lunch: {
+			id: number;
+			name: string;
+			description: string;
+			protein: string;
+			carbs: string;
+			fats: string;
+			benefits: string;
+			ingredients: string;
+			image: string;
+		};
+		dinner: {
+			id: number;
+			name: string;
+			description: string;
+			protein: string;
+			carbs: string;
+			fats: string;
+			benefits: string;
+			ingredients: string;
+			image: string;
+		};
+	}
 > = {
-1: {
-   breakfast: {
-      id: 1,
-      name: "Salad with egg",
-      description: "200kcal • 150g",
-      protein: "Protein - 50g",
-      carbs: "Carbohydrates - 40g",
-      fats: "Fats - 40g",
-   },
-   lunch: {
-      id: 2,
-      name: "Grilled chicken with vegetables",
-      description: "350kcal • 200g",
-      protein: "Protein - 60g",
-      carbs: "Carbohydrates - 50g",
-      fats: "Fats - 20g",
-   },
-   dinner: {
-      id: 3,
-      name: "Baked salmon with salad",
-      description: "300kcal • 180g",
-      protein: "Protein - 45g",
-      carbs: "Carbohydrates - 30g",
-      fats: "Fats - 25g",
-   },
-},
-2: {
-   breakfast: {
-      id: 4,
-      name: "Greek yogurt with honey and berries",
-      description: "250kcal • 180g",
-      protein: "Protein - 30g",
-      carbs: "Carbohydrates - 40g",
-      fats: "Fats - 10g",
-   },
-   lunch: {
-      id: 5,
-      name: "Quinoa salad with chickpeas",
-      description: "400kcal • 220g",
-      protein: "Protein - 35g",
-      carbs: "Carbohydrates - 60g",
-      fats: "Fats - 15g",
-   },
-   dinner: {
-      id: 6,
-      name: "Stir-fried tofu with rice",
-      description: "350kcal • 210g",
-      protein: "Protein - 30g",
-      carbs: "Carbohydrates - 55g",
-      fats: "Fats - 20g",
-   },
-},
-3: {
-   breakfast: {
-      id: 7,
-      name: "Smoothie with spinach and banana",
-      description: "180kcal • 160g",
-      protein: "Protein - 25g",
-      carbs: "Carbohydrates - 35g",
-      fats: "Fats - 5g",
-   },
-   lunch: {
-      id: 8,
-      name: "Turkey wrap with mixed greens",
-      description: "320kcal • 200g",
-      protein: "Protein - 45g",
-      carbs: "Carbohydrates - 50g",
-      fats: "Fats - 12g",
-   },
-   dinner: {
-      id: 9,
-      name: "Veggie pasta with marinara sauce",
-      description: "280kcal • 220g",
-      protein: "Protein - 20g",
-      carbs: "Carbohydrates - 50g",
-      fats: "Fats - 15g",
-   },
-},
+	1: {
+		breakfast: {
+			id: 1,
+			name: "Salad with egg",
+			description: "200kcal • 150g",
+			protein: "Protein - 50g",
+			carbs: "Carbohydrates - 40g",
+			fats: "Fats - 40g",
+			benefits: "Rich in protein and low in carbs, great for a light start.",
+			ingredients: "Egg, mixed greens, olive oil, vinegar",
+			image: "salad_with_egg.jpg",
+		},
+		lunch: {
+			id: 2,
+			name: "Grilled chicken with vegetables",
+			description: "350kcal • 200g",
+			protein: "Protein - 60g",
+			carbs: "Carbohydrates - 50g",
+			fats: "Fats - 20g",
+			benefits: "High in protein and fiber, perfect for muscle recovery.",
+			ingredients: "Chicken breast, broccoli, bell peppers, carrots",
+			image: "grilled_chicken.jpg",
+		},
+		dinner: {
+			id: 3,
+			name: "Baked salmon with salad",
+			description: "300kcal • 180g",
+			protein: "Protein - 45g",
+			carbs: "Carbohydrates - 30g",
+			fats: "Fats - 25g",
+			benefits: "Rich in Omega-3 fatty acids, supports heart health.",
+			ingredients: "Salmon, mixed greens, cherry tomatoes, cucumber",
+			image: "baked_salmon.jpg",
+		},
+	},
+	2: {
+		breakfast: {
+			id: 1,
+			name: "Salad with egg",
+			description: "200kcal • 150g",
+			protein: "Protein - 50g",
+			carbs: "Carbohydrates - 40g",
+			fats: "Fats - 40g",
+			benefits: "Rich in protein and low in carbs, great for a light start.",
+			ingredients: "Egg, mixed greens, olive oil, vinegar",
+			image: "salad_with_egg.jpg",
+		},
+		lunch: {
+			id: 2,
+			name: "Grilled chicken with vegetables",
+			description: "350kcal • 200g",
+			protein: "Protein - 60g",
+			carbs: "Carbohydrates - 50g",
+			fats: "Fats - 20g",
+			benefits: "High in protein and fiber, perfect for muscle recovery.",
+			ingredients: "Chicken breast, broccoli, bell peppers, carrots",
+			image: "grilled_chicken.jpg",
+		},
+		dinner: {
+			id: 3,
+			name: "Baked salmon with salad",
+			description: "300kcal • 180g",
+			protein: "Protein - 45g",
+			carbs: "Carbohydrates - 30g",
+			fats: "Fats - 25g",
+			benefits: "Rich in Omega-3 fatty acids, supports heart health.",
+			ingredients: "Salmon, mixed greens, cherry tomatoes, cucumber",
+			image: "baked_salmon.jpg",
+		},
+	},
+	3: {
+		breakfast: {
+			id: 1,
+			name: "Salad with egg",
+			description: "200kcal • 150g",
+			protein: "Protein - 50g",
+			carbs: "Carbohydrates - 40g",
+			fats: "Fats - 40g",
+			benefits: "Rich in protein and low in carbs, great for a light start.",
+			ingredients: "Egg, mixed greens, olive oil, vinegar",
+			image: "salad_with_egg.jpg",
+		},
+		lunch: {
+			id: 2,
+			name: "Grilled chicken with vegetables",
+			description: "350kcal • 200g",
+			protein: "Protein - 60g",
+			carbs: "Carbohydrates - 50g",
+			fats: "Fats - 20g",
+			benefits: "High in protein and fiber, perfect for muscle recovery.",
+			ingredients: "Chicken breast, broccoli, bell peppers, carrots",
+			image: "grilled_chicken.jpg",
+		},
+		dinner: {
+			id: 3,
+			name: "Baked salmon with salad",
+			description: "300kcal • 180g",
+			protein: "Protein - 45g",
+			carbs: "Carbohydrates - 30g",
+			fats: "Fats - 25g",
+			benefits: "Rich in Omega-3 fatty acids, supports heart health.",
+			ingredients: "Salmon, mixed greens, cherry tomatoes, cucumber",
+			image: "baked_salmon.jpg",
+		},
+	},
 };
